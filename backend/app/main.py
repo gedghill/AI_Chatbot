@@ -1,4 +1,5 @@
 import logging
+import subprocess
 from fastapi import FastAPI, HTTPException, Request
 from pydantic import BaseModel
 from chatbot import predict_class, get_response
@@ -7,7 +8,7 @@ from fastapi.middleware.cors import CORSMiddleware
 # Initialize FastAPI app
 app = FastAPI(title="COM727 Chatbot API", description="An API for chatbot interaction", version="1.0")
 
-# Add this after initializing the app
+# Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  # Replace "*" with specific origins if needed
@@ -16,16 +17,15 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
 # Configure logging
 logging.basicConfig(
     filename="chat.log",  # Log file name
-    level=logging.INFO,  # Log level
+    level=logging.INFO,   # Log level
     format="%(asctime)s - %(levelname)s - %(message)s",  # Log format
     datefmt="%Y-%m-%d %H:%M:%S",  # Date format
 )
 
-# Define request model
+# Define request model for chatbot
 class ChatRequest(BaseModel):
     message: str
 
@@ -58,9 +58,29 @@ def chatbot_response(chat_request: ChatRequest):
 
     return {"response": bot_response}
 
-
-@app.get("/api/hello", summary="Chat with the chatbot", tags=["Chatbot"])
+@app.get("/api/hello", summary="Check backend status", tags=["Chatbot"])
 def hello():
-    return {
-        "response": "hello backend is running fine."
-    }
+    return {"response": "Hello, backend is running fine."}
+
+@app.post("/api/retrain", summary="Retrain the chatbot model", tags=["Chatbot"])
+def retrain_model():
+    """Endpoint to trigger the retraining of the chatbot model."""
+    try:
+        # Log retraining initiation
+        logging.info("Retraining initiated by user.")
+        
+        # Execute the training.py script
+        result = subprocess.run(["python", "training.py"], capture_output=True, text=True, check=True)
+        
+        # Log success and output
+        logging.info("Retraining completed successfully.")
+        logging.info(f"Retraining output: {result.stdout}")
+        
+        return {"message": "Model retrained successfully!"}
+    except subprocess.CalledProcessError as e:
+        # Log error details
+        logging.error(f"Retraining failed: {e.stderr}")
+        raise HTTPException(status_code=500, detail=f"Retraining failed: {e.stderr}")
+    except Exception as e:
+        logging.error(f"Unexpected error during retraining: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Unexpected error: {str(e)}")
