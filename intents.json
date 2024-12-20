@@ -7,7 +7,7 @@
     "responses": ["Goodbye!", "See you later.", "Please come back soon."]},
   {"tag": "name",
     "patterns": ["name", "your name","what should I call you","who are you"],
-    "responses": ["I'm a Chatbot.", "My name is AI Chatbot.", "I am your Chatbot."]},
+    "responses": ["I'm the AI Chatbot for The Tipsy Boutique! You can call me Tipsy if you wish."]},
   {"tag": "hours",
     "patterns": ["when are you open", "opening hours","what time you close","closing hours", "What are your hours?", "when you open", "when you close"],
     "responses": ["We are open 7AM to 9PM! Please let me know if you have any other questions."]},
