@@ -6,9 +6,10 @@ import numpy as np
 import nltk
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, Dropout
-from tensorflow.keras.optimizers import SGD
+from tensorflow.keras.models import Sequential # type: ignore
+from tensorflow.keras.optimizers import SGD # type: ignore
+from tensorflow.keras.layers import Dense, Conv1D, Embedding, MaxPooling1D, LSTM, Dropout # type: ignore
+
 
 # Suppress TensorFlow warnings and force CPU usage
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'  # Suppress TensorFlow warnings
@@ -83,18 +84,31 @@ random.shuffle(training)
 training = np.array(training, dtype=object)
 train_x = list(training[:, 0])
 train_y = list(training[:, 1])
-
-# Build the Sequential model
+# CNN + LSTM Model
 model = Sequential()
-model.add(Dense(128, input_shape=(len(train_x[0]),), activation='relu'))
-model.add(Dropout(0.5))
+
+# Embedding Layer
+model.add(Embedding(input_dim=len(words),  # Size of the vocabulary
+                    output_dim=128,       # Embedding dimensions (e.g., 128)
+                    input_length=len(train_x[0])))  # Length of each input sequence
+
+# CNN Layer for Feature Extraction
+model.add(Conv1D(filters=128, kernel_size=5, activation='relu'))
+model.add(MaxPooling1D(pool_size=2))
+
+# LSTM Layer for Sequential Learning
+model.add(LSTM(128, return_sequences=False))
+
+# Dense Layer for Classification
 model.add(Dense(64, activation='relu'))
 model.add(Dropout(0.5))
-model.add(Dense(len(train_y[0]), activation='softmax'))
+model.add(Dense(len(classes), activation='softmax'))  # Number of classes
 
-# Compile the model
-sgd = SGD(learning_rate=0.01, decay=1e-6, momentum=0.9, nesterov=True)
-model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
+# Compile the Model
+model.compile(optimizer='adam', 
+               loss='categorical_crossentropy', 
+                metrics=['accuracy'])
+
 
 # Train the model
 try:
