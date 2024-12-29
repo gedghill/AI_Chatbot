@@ -149,6 +149,18 @@
       ]
     },
     {
+      "tag": "Items chocolate Flavour",
+      "patterns": [
+        "I love chocolate, what chocolate flavours can you recommend?",
+        " Could you suggest some chocolate flavour"
+      ],
+      "responses": [
+        "Yes we do sell Chocolate, Chocolate Chip Cookie donuts .",
+        "Yes, In chocolate flavours we have Brownie, S'mores, Hot Fudge Oreo, and Chocolate!"
+      ]
+    },
+
+    {
       "tag": "limited_edition items",
       "patterns": [
         "Are there different prices for seasonal or limited-edition items?",
