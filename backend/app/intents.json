@@ -25,9 +25,7 @@
       "responses": [
         "Hello! What can I do for you?",
         "Hello! How can I assist you today?",
-        "Hey, How is it going?",
-        "Greetings! How may I be of service?",
-        "Good to see you! How can I help you?"
+        "Greetings! how can i help you today?"
       ]
     },
     {
@@ -42,21 +40,17 @@
         "tata",
         "Talk to you soon",
         "Catch you later",
-        "I am leaving now",
         "have a good day",
         "Take care",
-        "See you soon",
         "Later!",
-        "ciao",
-        "I am heading out"
+        "ciao"
       ],
       "responses": [
         "Goodbye!",
         "See you later.",
-        "Please come back soon.",
         "See you later! Stay safe!",
         "Catch you later! Let me know if you need anything else!",
-        "Talk to you soon! It was great assisting you!",
+        " Hope we talk soon! It was great assisting you!",
         "Bye-bye! See you next time!",
         "Good bye! Have a great day",
         "Bye! Enjoy your day"
@@ -80,10 +74,10 @@
       ],
       "responses": [
         "I'm the AI Chatbot for The Tipsy Boutique! You can call me Tipsy if you wish!",
-        "I'm your assistant! You can call me Chatbot",
-        "I am chatbot, and here to help",
+        "I'm your assistant! You can call me Tipsybot",
+        "I am Tipsybot, and here to help",
         "I am your virtual assistant",
-        "I am chatbot,your virtual assitant"
+        "I am Tipsybot,your virtual assitant"
       ]
     },
     {
@@ -106,11 +100,11 @@
         "when should I come?"
       ],
       "responses": [
-        "We are open 7AM to 9PM Monday-Saturday!",
-        "I’m here anytime you need me.",
-        "You can reach out to me at any time. I’m always here to help!",
-        "I’m always online and ready to assist, day or night.",
-        "I'm available 24/7 to assist you!"
+        "We are open 7AM to 9PM Monday-Saturday. but i avaliable 24/7",
+        "I’m available anytime you need me. but shop is open 7AM to 9PM Monday-Saturday ",
+        "You can reach out to me at any time. I’m always available to help! But the shop is open 7AM to 9PM Monday-Saturday",
+        "I’m always online and ready to assist, 7 days a week. but shop is open 7AM to 9PM Monday-Saturday",
+        "I'm available 24/7 to assist you! but we are open 7AM to 9PM Monday-Saturday"
       ]
     },
     {
@@ -132,7 +126,7 @@
       "responses": [
         "We sell regular sized donuts, mini donuts, filled mini donuts, and cupcakes! Our donut flavours are: Vanilla, Chocolate, Hot Fudge Oreo, S'mores, Brownie, Chocolate Chip Cookie, Strawberry Cheesecake, Oreo, Plain Glazed, and Cinnamon Sugar.",
         "If you would like to see our full menu, please visit the Menu tab on our website!",
-        "Yes, we feature seasonal items that change throughout the year, like pumpkin spice donuts in fall."
+        
       ]
     },
     {
@@ -148,18 +142,6 @@
         "Our most popular chocolate flavours are Brownie, S'mores, Hot Fudge Oreo, and Chocolate!"
       ]
     },
-    {
-      "tag": "Items chocolate Flavour",
-      "patterns": [
-        "I love chocolate, what chocolate flavours can you recommend?",
-        " Could you suggest some chocolate flavour"
-      ],
-      "responses": [
-        "Yes we do sell Chocolate, Chocolate Chip Cookie donuts .",
-        "Yes, In chocolate flavours we have Brownie, S'mores, Hot Fudge Oreo, and Chocolate!"
-      ]
-    },
-
     {
       "tag": "limited_edition items",
       "patterns": [
@@ -198,7 +180,7 @@
         "I want a personalized design",
         "Can I customize this?",
         "Do you create custom products?",
-        "I need something tailored for me",
+        "I need something tailored for me is it possible?",
         "Can you make something special for me?",
         "Do you do custom orders?",
         "Can I request a custom item?",
@@ -207,10 +189,10 @@
       "responses": [
         "Yes, we can create custom items! Let me know what you have in mind.",
         "Of course! Tell me the details, and we’ll work on a custom solution for you.",
-        "We offer custom-made options! What are you looking for specifically?",
+        "Definitely,We offer custom-made options! What are you looking for specifically?",
         "Absolutely! Let’s discuss your requirements for a personalized product.",
-        "Custom orders are our specialty! Share your ideas, and we’ll bring them to life.",
-        "We’d love to help with your custom needs. Please provide more details!"
+        "Yes,Custom orders are our specialty! Share your ideas, and we’ll bring them to life.",
+        "Yes,We’d love to help with your custom needs. Please provide more details!"
       ]
     },
     {
@@ -228,7 +210,7 @@
       "responses": [
         "Yes, we offer tailored pricing for custom doughnuts and cupcakes, depending on design details and specifications. Please visit the Pricing tab on our website for more information on special orders!",
         "Yeah,sure! custom orders are priced based on size,design,flavours",
-        "We’d love to give you a quote! Please share your customization needs",
+        "We’d love to give you a quote! Please share your customization details",
         "The cost of custom items depends on your requirements. Let us know your preferences for an estimate costing."
       ]
     },
@@ -244,24 +226,20 @@
         "Are there any delivery charges?"
       ],
       "responses": [
-        "Yes, delivery fees are extra and vary by location and order size.",
-        "Our delivery fees vary by location. For some orders, we offer free delivery—contact us for specifics!",
-        "Yes, there may be delivery charges, but we offer free shipping on certain orders. Let us check for you!",
-        "Delivery charges are calculated based on location and order value. Contact us for a detailed breakdown."
+        "Yes, delivery fees are extra and vary by location and order size.but our regular customer get free delivery ",
+        "Our delivery fees vary by location, but our regular customer get free delivery",
       ]
     },
     {
       "tag": "discounts",
       "patterns": [
         "Do you offer discounts for large orders of baked goods?",
-        "Is there a price discount if I buy a dozen of your top flavors?"
+        "Is there a price discount if I buy a dozen of your top flavors?",
+        "Any discount if my order size is large?"
       ],
       "responses": [
         "Yes, we provide discounts on bulk orders, with rates varying by the quantity and item type.",
-        "Yes, seasonal and limited-edition items may have special pricing.",
-        "Prices range from $1 to $15 depending on the item and customization.",
-        "Filled donuts are priced at $1.50 each.",
-        "A box of assorted filled donuts costs around $12."
+        "Yes, we give discounts if you order dozen dounts/cupcakes or more."
       ]
     },
     {
@@ -287,7 +265,20 @@
         "Is there an extra charge for Crème Brûlée and Boston Cream?"
       ],
       "responses": [
-        "Filled donuts are priced at $1.50 each.",
+        "All filled donuts are for $1.50 each. but unfilled are for $1",
+        "A box of assorted filled donuts costs around $12."
+      ]
+    },
+    {
+      "tag": "assorted_filling",
+      "patterns": [
+
+        "How much is a box of assorted filled donuts?",
+        "What’s the price of a box of assorted filled donuts?",
+        "How much does a box of assorted filled donuts cost?",
+        "Can you tell me the cost of a box of assorted filled donuts?"
+      ],
+      "responses": [
         "A box of assorted filled donuts costs around $12."
       ]
     },
